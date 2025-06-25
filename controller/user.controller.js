@@ -55,6 +55,7 @@ export const authenticateUser = async (request, response, next) => {
         return status ? response.status(200).json({ message: "Sign in success",user }) : response.status(401).json({ error: "Unauthorized user | Invalid password" });
     }
     catch (err) {
+        console.log(err);
         return response.status(500).json({ error: "Internal Server Error" });
     }
 }
